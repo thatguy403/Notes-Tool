@@ -51,6 +51,7 @@ namespace Notes_Tool
             }
         }
 
+        // returns a template from a selected index
         private String loadTemplate(int index)
         {
             if (templateList.Count > 0)
@@ -61,13 +62,18 @@ namespace Notes_Tool
                 return "Error: List of templates is not loaded.";
             }
         }
+        
 
         // Click action for Add button
         private void b_Add_Click(object sender, EventArgs e)
         {
             if (cb_TemplateList.SelectedIndex >= 0)
             {
-                tb_Notes.Text += Environment.NewLine + loadTemplate(cb_TemplateList.SelectedIndex);
+                if (tb_Notes.Text != "")
+                {
+                    tb_Notes.Text += Environment.NewLine;
+                }
+                tb_Notes.Text += loadTemplate(cb_TemplateList.SelectedIndex);
                     //templateList.ElementAt(cb_TemplateList.SelectedIndex).getTemplate();
             }
             else
@@ -136,7 +142,7 @@ namespace Notes_Tool
         private void tsmi_Help_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Notes Tool" + Environment.NewLine
-                            + "Version 1.0.0" + Environment.NewLine + Environment.NewLine
+                            + "Version 0.1.0" + Environment.NewLine + Environment.NewLine
                             + "Developed by: Paul Ramos" + Environment.NewLine + Environment.NewLine
                             + "Please send any feedback to:" + Environment.NewLine
                             + "paul.ramos@telus.com",

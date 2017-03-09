@@ -142,7 +142,7 @@
             // tsmi_File_Exit
             // 
             this.tsmi_File_Exit.Name = "tsmi_File_Exit";
-            this.tsmi_File_Exit.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_File_Exit.Size = new System.Drawing.Size(92, 22);
             this.tsmi_File_Exit.Text = "Exit";
             this.tsmi_File_Exit.Click += new System.EventHandler(this.tsmi_File_Exit_Click);
             // 
@@ -175,10 +175,11 @@
             this.Controls.Add(this.b_Clear);
             this.Controls.Add(this.b_Copy);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "Notes Tool 1.0.0";
+            this.Text = "Notes Tool 0.1.0";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

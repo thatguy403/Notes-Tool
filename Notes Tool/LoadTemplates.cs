@@ -12,7 +12,7 @@ namespace Notes_Tool
      *  Loads a list of templates items for use on the main 
      *  program.
      * Future possible additions:
-     *  - loading from file 
+     *  - loading from file
      *************************************************************/
     class LoadTemplates
     {

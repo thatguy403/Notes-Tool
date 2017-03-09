@@ -35,7 +35,7 @@ namespace Notes_Tool
             */
         }
 
-        // loads the list of templates into cb_TemplateList
+        // loads the list of templates into cb_TemplateList asdf
         private void load_cbTemplateList()
         {
             LoadTemplates loaded = new LoadTemplates();

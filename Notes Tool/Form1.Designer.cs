@@ -157,7 +157,7 @@
             // tsmi_Help_About
             // 
             this.tsmi_Help_About.Name = "tsmi_Help_About";
-            this.tsmi_Help_About.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Help_About.Size = new System.Drawing.Size(107, 22);
             this.tsmi_Help_About.Text = "About";
             this.tsmi_Help_About.Click += new System.EventHandler(this.tsmi_Help_About_Click);
             // 
@@ -179,7 +179,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "Notes Tool 0.1.0";
+            this.Text = "Notes Tool 0.1.1";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

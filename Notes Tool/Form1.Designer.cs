@@ -179,7 +179,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "Notes Tool 0.1.1";
+            this.Text = "Notes Tool 0.1.2";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

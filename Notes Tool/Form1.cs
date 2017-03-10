@@ -142,7 +142,7 @@ namespace Notes_Tool
         private void tsmi_Help_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Notes Tool" + Environment.NewLine
-                            + "Version 0.1.0" + Environment.NewLine + Environment.NewLine
+                            + "Version 0.1.1" + Environment.NewLine + Environment.NewLine
                             + "Developed by: Paul Ramos" + Environment.NewLine + Environment.NewLine
                             + "Please send any feedback to:" + Environment.NewLine
                             + "paul.ramos@telus.com",

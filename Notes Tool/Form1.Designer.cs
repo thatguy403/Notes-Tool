@@ -87,6 +87,7 @@
             // cb_TemplateList
             // 
             this.cb_TemplateList.FormattingEnabled = true;
+            this.cb_TemplateList.ItemHeight = 13;
             this.cb_TemplateList.Location = new System.Drawing.Point(104, 32);
             this.cb_TemplateList.Name = "cb_TemplateList";
             this.cb_TemplateList.Size = new System.Drawing.Size(393, 21);
@@ -179,7 +180,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "Notes Tool 0.1.2";
+            this.Text = "TSS Notes Tool 0.1.2";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -194,7 +195,6 @@
         private System.Windows.Forms.Button b_Clear;
         private System.Windows.Forms.Button b_Reset;
         private System.Windows.Forms.Button b_Add;
-        private System.Windows.Forms.ComboBox cb_TemplateList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_Notes;
@@ -203,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_File_Exit;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Help;
         private System.Windows.Forms.ToolStripMenuItem tsmi_Help_About;
+        private System.Windows.Forms.ComboBox cb_TemplateList;
     }
 }
 

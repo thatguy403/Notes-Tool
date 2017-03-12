@@ -12,8 +12,9 @@ namespace Notes_Tool
 {
     public partial class f_NotesMain : Form
     {
-        List<TemplateItem> templateList;
+        List<TemplateItem> templateList;    // The list of templates
 
+        // Initilizes Form
         public f_NotesMain()
         {
             InitializeComponent();
@@ -27,25 +28,22 @@ namespace Notes_Tool
             // Load first template into the notes
             tb_Notes.Text += loadTemplate(0);
 
-            /*
-            // Main header template loaded if available. Note: should always be the first in the list
-            if (templateList.Count > 0) {
-                tb_Notes.Text = templateList.ElementAt(0).getTemplate();
-            }
-            */
         }
 
-        // loads the list of templates into cb_TemplateList asdf
-        private void load_cbTemplateList()
+        #region Initilize and load templates
+
+    // Loads the list of templates into cb_TemplateList
+    private void load_cbTemplateList()
         {
             LoadTemplates loaded = new LoadTemplates();
             loaded.init();
             //loaded.setTestSample1();
-            loaded.setHardCodeTemplates();
+            //loaded.setTestSample2();
+            loaded.setAssureTemplates();
             templateList = loaded.getTemplateList();
 
             // Loads each of the titles in the template list into cb_TemplateList
-            for(int i=0; i < templateList.Count; i++)
+            for (int i = 0; i < templateList.Count; i++)
             {
                 cb_TemplateList.Items.Add(templateList.ElementAt(i).getTitle());
             }
@@ -58,30 +56,40 @@ namespace Notes_Tool
             {
                 return templateList.ElementAt(index).getTemplate();
             }
-            else {
+            else
+            {
                 return "Error: List of templates is not loaded.";
             }
         }
-        
+
+        #endregion
+
+        #region Button Actions
 
         // Click action for Add button
         private void b_Add_Click(object sender, EventArgs e)
         {
+            String template = "";
+            // Checks if an item is selected
             if (cb_TemplateList.SelectedIndex >= 0)
             {
-                if (tb_Notes.Text != "")
+                template = loadTemplate(cb_TemplateList.SelectedIndex);
+                // Checks if a new line is needed to be added
+                if ((tb_Notes.Text != "") && (template != ""))
                 {
                     tb_Notes.Text += Environment.NewLine;
                 }
-                tb_Notes.Text += loadTemplate(cb_TemplateList.SelectedIndex);
-                    //templateList.ElementAt(cb_TemplateList.SelectedIndex).getTemplate();
+                // Adds the template to tb_Notes
+                tb_Notes.Text += template;
             }
+            // Error message if no item is selected
             else
             {
                 MessageBox.Show("Please select a template to add.",
                                 "Error!", MessageBoxButtons.OK);
             }
-            
+
+            setCursorToNotes();
         }
 
         // Click action for Copy button
@@ -90,6 +98,8 @@ namespace Notes_Tool
             // Takes all text in the Notes section and coipes it to
             // the clipboard so the user can paste it where it is needed
             Clipboard.SetText(tb_Notes.Text);
+
+            setCursorToNotes();
         }
 
         // Click action for the Clear button
@@ -107,7 +117,9 @@ namespace Notes_Tool
                 tb_Notes.Clear();
             }
             // else do nothing
-            else {}
+            else { }
+
+            setCursorToNotes();
         }
 
         // Click action for Reset button
@@ -128,8 +140,13 @@ namespace Notes_Tool
             }
             // else do nothing
             else { }
-            
+
+            setCursorToNotes();
         }
+
+        #endregion
+
+        #region Menu Bar Actions
 
         // Menu item File > Exit action
         private void tsmi_File_Exit_Click(object sender, EventArgs e)
@@ -141,7 +158,7 @@ namespace Notes_Tool
         // Menu item Help > About action
         private void tsmi_Help_About_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Notes Tool" + Environment.NewLine
+            MessageBox.Show("TSS Notes Tool" + Environment.NewLine
                             + "Version 0.1.2" + Environment.NewLine + Environment.NewLine
                             + "Developed by: Paul Ramos" + Environment.NewLine + Environment.NewLine
                             + "Please send any feedback to:" + Environment.NewLine
@@ -149,5 +166,20 @@ namespace Notes_Tool
                             "About Notes Tool",
                             MessageBoxButtons.OK);
         }
+
+        #endregion
+
+        #region Other Internal Stuff
+
+        // Sets the cursor to tb_Notes and goes to the end of the text
+        private void setCursorToNotes()
+        {
+            tb_Notes.SelectionStart = tb_Notes.Text.Count();
+            tb_Notes.ScrollToCaret();
+            tb_Notes.Focus();
+        }
+
+        #endregion
+
     }
 }

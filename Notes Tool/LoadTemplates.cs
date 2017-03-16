@@ -111,10 +111,17 @@ namespace Notes_Tool
 
             // Tests Section
             templateList.Add(getTitleTests());
+            templateList.Add(getGeneralChecks());
             templateList.Add(getEquipmentChecks());
             templateList.Add(getInsSpeed());
             templateList.Add(getSpeedTest());
             templateList.Add(getTSTV());
+
+            // Closings Section
+            templateList.Add(getTitleClosing());
+            templateList.Add(getOpenClose());
+            templateList.Add(getFollowUp());
+            templateList.Add(getDispatch());
 
             //Other Section
             templateList.Add(getTitleOther());
@@ -127,12 +134,14 @@ namespace Notes_Tool
             TemplateItem template = new TemplateItem();
             template.init();
             template.setTitle("Service 2.0 Header");
-            template.setTemplate("**Service 2.0**" + Environment.NewLine
-                                 + "Spoke with/@: " + Environment.NewLine
-                                 + "CBR: " + Environment.NewLine
-                                 + "Verified /w: " + Environment.NewLine
+            template.setTemplate("Spoke with/@: " + Environment.NewLine
+                                 + "Verified by: " + Environment.NewLine
+                                 + "CBR1: " + Environment.NewLine
+                                 + "CBR2: " + Environment.NewLine                                 
                                  + "Case #: " + Environment.NewLine
-                                 + "Record: ");
+                                 + "Customer issue: " + Environment.NewLine
+                                 + "Issue since: " + Environment.NewLine
+                                 + "Insight Workflow used: ");
 
             return template;
         }
@@ -150,6 +159,22 @@ namespace Notes_Tool
             return template;
         }
 
+        #region Voice workflows
+
+        #endregion
+
+        #region IPTV workflows
+
+        #endregion
+
+        #region Broadband workflows
+
+        #endregion
+
+        #region Satellite workflows
+
+        #endregion
+
         #endregion
 
         #region -- Tests --
@@ -165,15 +190,27 @@ namespace Notes_Tool
             return template;
         }
 
+        // Returns General Checks
+        private TemplateItem getGeneralChecks()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("General Checks");
+            template.setTemplate("Outage: Y/N  Suspension: Y/N  Pending Orders: Y/N");
+
+            return template;
+        }
+
         // Returns Gateway/STB Checks
         private TemplateItem getEquipmentChecks()
         {
             TemplateItem template = new TemplateItem();
             template.init();
-            template.setTitle("Gateway/STB/ONT Checks");
+            template.setTitle("Equipment Checks");
             template.setTemplate("Device model: " + Environment.NewLine
                                  + "- Lights on: " + Environment.NewLine
-                                 + "- Cables attached: ");
+                                 + "- Cables attached: " + Environment.NewLine
+                                 + "- Rebooted: Y/N");
 
             return template;
         }
@@ -186,6 +223,10 @@ namespace Notes_Tool
             template.setTitle("Insight Speed Checks");
             template.setTemplate("Insight shows: " + Environment.NewLine
                                  + "- Current Train Rate: " + Environment.NewLine
+                                 + "- Attainable rates: " + Environment.NewLine
+                                 + "- Line attenuation: " + Environment.NewLine
+                                 + "- Theoretical dB loss: " + Environment.NewLine
+                                 + "- SNR margin: " + Environment.NewLine
                                  + "- QoS: ");
 
             return template;
@@ -221,10 +262,69 @@ namespace Notes_Tool
                                  + "1= " + Environment.NewLine
                                  + "13= " + Environment.NewLine
                                  + "32= " + Environment.NewLine
+                                 + "SAT 82" + Environment.NewLine
                                  + "Transponder" + Environment.NewLine
                                  + "1= " + Environment.NewLine
                                  + "13= " + Environment.NewLine
                                  + "32= ");
+
+            return template;
+        }
+
+        #endregion
+
+        #region -- Ticket Closings --
+
+        // Returns Section title for Closings
+        private TemplateItem getTitleClosing()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("-- Ticket Closing --");
+            template.setTemplate("");
+
+            return template;
+        }
+
+        // Returns Open/Close
+        private TemplateItem getOpenClose()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Open/Close");
+            template.setTemplate("Issue Resolved: Y/N" + Environment.NewLine
+                                 + "Recap: Y/N" + Environment.NewLine
+                                 + "Other issues: ");
+
+            return template;
+        }
+
+        // Returns Follow Up
+        private TemplateItem getFollowUp()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Follow Up");
+            template.setTemplate("Follow up /w cx is required" + Environment.NewLine
+                                 + "Issue Resolved: Y/N" + Environment.NewLine
+                                 + "Recap: Y/N" + Environment.NewLine
+                                 + "Follow up reason: " + Environment.NewLine
+                                 + "Follow up date: ");
+
+            return template;
+        }
+
+        // Returns Dispatch
+        private TemplateItem getDispatch()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Dispatch");
+            template.setTemplate("Dispatch reason: "
+                                 + "Verified Address: Y/N" + Environment.NewLine
+                                 + "Verified CBR: Y/N" + Environment.NewLine
+                                 + "Booking dispatch" + Environment.NewLine
+                                 + "AOPC: Y/N");
 
             return template;
         }

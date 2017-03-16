@@ -87,6 +87,7 @@
             // cb_TemplateList
             // 
             this.cb_TemplateList.FormattingEnabled = true;
+            this.cb_TemplateList.IntegralHeight = false;
             this.cb_TemplateList.ItemHeight = 13;
             this.cb_TemplateList.Location = new System.Drawing.Point(104, 32);
             this.cb_TemplateList.Name = "cb_TemplateList";
@@ -180,7 +181,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "TSS Notes Tool 0.1.2";
+            this.Text = "TSS Notes Tool 0.2.0";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

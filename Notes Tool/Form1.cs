@@ -32,8 +32,8 @@ namespace Notes_Tool
 
         #region Initilize and load templates
 
-    // Loads the list of templates into cb_TemplateList
-    private void load_cbTemplateList()
+        // Loads the list of templates into cb_TemplateList
+        private void load_cbTemplateList()
         {
             LoadTemplates loaded = new LoadTemplates();
             loaded.init();
@@ -159,7 +159,7 @@ namespace Notes_Tool
         private void tsmi_Help_About_Click(object sender, EventArgs e)
         {
             MessageBox.Show("TSS Notes Tool" + Environment.NewLine
-                            + "Version 0.2.0" + Environment.NewLine + Environment.NewLine
+                            + "Version 0.2.1" + Environment.NewLine + Environment.NewLine
                             + "Developed by: Paul Ramos" + Environment.NewLine + Environment.NewLine
                             + "Please send any feedback to:" + Environment.NewLine
                             + "paul.ramos@telus.com",

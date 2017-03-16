@@ -181,7 +181,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "TSS Notes Tool 0.2.0";
+            this.Text = "TSS Notes Tool 0.2.1";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

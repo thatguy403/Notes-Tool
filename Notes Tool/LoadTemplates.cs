@@ -320,7 +320,7 @@ namespace Notes_Tool
             TemplateItem template = new TemplateItem();
             template.init();
             template.setTitle("Dispatch");
-            template.setTemplate("Dispatch reason: "
+            template.setTemplate("Dispatch reason: " + Environment.NewLine
                                  + "Verified Address: Y/N" + Environment.NewLine
                                  + "Verified CBR: Y/N" + Environment.NewLine
                                  + "Booking dispatch" + Environment.NewLine

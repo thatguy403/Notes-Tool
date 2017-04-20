@@ -56,7 +56,7 @@
             // 
             // b_Clear
             // 
-            this.b_Clear.Location = new System.Drawing.Point(408, 384);
+            this.b_Clear.Location = new System.Drawing.Point(416, 384);
             this.b_Clear.Name = "b_Clear";
             this.b_Clear.Size = new System.Drawing.Size(75, 23);
             this.b_Clear.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             // b_Reset
             // 
-            this.b_Reset.Location = new System.Drawing.Point(496, 384);
+            this.b_Reset.Location = new System.Drawing.Point(504, 384);
             this.b_Reset.Name = "b_Reset";
             this.b_Reset.Size = new System.Drawing.Size(75, 23);
             this.b_Reset.TabIndex = 5;
@@ -129,7 +129,7 @@
             this.tsmi_Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(588, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(585, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -144,7 +144,7 @@
             // tsmi_File_Exit
             // 
             this.tsmi_File_Exit.Name = "tsmi_File_Exit";
-            this.tsmi_File_Exit.Size = new System.Drawing.Size(92, 22);
+            this.tsmi_File_Exit.Size = new System.Drawing.Size(152, 22);
             this.tsmi_File_Exit.Text = "Exit";
             this.tsmi_File_Exit.Click += new System.EventHandler(this.tsmi_File_Exit_Click);
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 412);
+            this.ClientSize = new System.Drawing.Size(585, 416);
             this.Controls.Add(this.tb_Notes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -181,7 +181,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "f_NotesMain";
-            this.Text = "TSS Notes Tool 0.2.0";
+            this.Text = "TSS Notes Tool 0.2.1";
             this.Load += new System.EventHandler(this.f_NotesMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -161,11 +161,15 @@ namespace Notes_Tool
             MessageBox.Show("TSS Notes Tool" + Environment.NewLine
                             + "Version 0.2.1" + Environment.NewLine + Environment.NewLine
                             + "Developed by: Paul Ramos" + Environment.NewLine + Environment.NewLine
-                            + "Please send any feedback to:" + Environment.NewLine
+                            + "Information on this tool can be found at" + Environment.NewLine
+                            + "go/notestool" + Environment.NewLine
+                            + "Telus G Suite access required." + Environment.NewLine + Environment.NewLine
+                            + "Please send any feedback throgh the aboved" + Environment.NewLine
+                            + "site or send an email to:" + Environment.NewLine
                             + "paul.ramos@telus.com",
                             "About Notes Tool",
                             MessageBoxButtons.OK);
-        }
+        }   
 
         #endregion
 

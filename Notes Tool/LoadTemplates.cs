@@ -113,9 +113,12 @@ namespace Notes_Tool
             templateList.Add(getTitleTests());
             templateList.Add(getGeneralChecks());
             templateList.Add(getEquipmentChecks());
-            templateList.Add(getInsSpeed());
+            templateList.Add(getInsSpeedCopper());
             templateList.Add(getSpeedTest());
+            templateList.Add(getPhoneBasic());
+            templateList.Add(getEmailPwd());
             templateList.Add(getTSTV());
+            templateList.Add(getRemoteProgramming());
 
             // Closings Section
             templateList.Add(getTitleClosing());
@@ -123,9 +126,15 @@ namespace Notes_Tool
             templateList.Add(getFollowUp());
             templateList.Add(getDispatch());
 
-            //Other Section
+            // Other Section
             templateList.Add(getTitleOther());
             templateList.Add(getDispatchNotes());
+
+            //Workflow Section
+            templateList.Add(getTitleWorkflow());
+            templateList.Add(getWFSTBNoBoot());
+            templateList.Add(getWFSlowSpeeds());
+            templateList.Add(getWFWifiConn());
         }
 
         // Returns Assure Service 2.0 Header
@@ -134,48 +143,17 @@ namespace Notes_Tool
             TemplateItem template = new TemplateItem();
             template.init();
             template.setTitle("Service 2.0 Header");
-            template.setTemplate("Spoke with/@: " + Environment.NewLine
+            template.setTemplate("Spoke with: " + Environment.NewLine
                                  + "Verified by: " + Environment.NewLine
                                  + "CBR1: " + Environment.NewLine
                                  + "CBR2: " + Environment.NewLine                                 
                                  + "Case #: " + Environment.NewLine
-                                 + "Customer issue: " + Environment.NewLine
+                                 + "Issue Details: " + Environment.NewLine
                                  + "Issue since: " + Environment.NewLine
                                  + "Insight Workflow used: ");
 
             return template;
         }
-
-        #region -- Workflow --
-
-        // Returns Section title for workflow
-        private TemplateItem getTitleWorkflow()
-        {
-            TemplateItem template = new TemplateItem();
-            template.init();
-            template.setTitle("-- Workflow --");
-            template.setTemplate("");
-
-            return template;
-        }
-
-        #region Voice workflows
-
-        #endregion
-
-        #region IPTV workflows
-
-        #endregion
-
-        #region Broadband workflows
-
-        #endregion
-
-        #region Satellite workflows
-
-        #endregion
-
-        #endregion
 
         #region -- Tests --
 
@@ -215,12 +193,12 @@ namespace Notes_Tool
             return template;
         }
 
-        // Returns Insight Speed Checks
-        private TemplateItem getInsSpeed()
+        // Returns Insight Speed Checks (Copper)
+        private TemplateItem getInsSpeedCopper()
         {
             TemplateItem template = new TemplateItem();
             template.init();
-            template.setTitle("Insight Speed Checks");
+            template.setTitle("Insight Speed Checks (copper)");
             template.setTemplate("Insight shows: " + Environment.NewLine
                                  + "- Current Train Rate: " + Environment.NewLine
                                  + "- Attainable rates: " + Environment.NewLine
@@ -231,7 +209,7 @@ namespace Notes_Tool
 
             return template;
         }
-
+        
         // Returns Speed Test
         private TemplateItem getSpeedTest()
         {
@@ -239,6 +217,36 @@ namespace Notes_Tool
             template.init();
             template.setTitle("Speed Test");
             template.setTemplate("- Device: , Wired: Y/N, Ping: , DL: , UL: ");
+
+            return template;
+        }
+
+        // Returns Email Password Issue
+        private TemplateItem getEmailPwd()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Email Password Issue");
+            template.setTemplate("Email address: " + Environment.NewLine
+                     + "Able to log in to webmail: Y/N" + Environment.NewLine
+                     + "Reset password via DT1: Y/N" + Environment.NewLine
+                     + "Confirmed cx able to change Password: Y/N" + Environment.NewLine
+                     + "Recovery Email setup: Y/N");
+
+            return template;
+        }
+
+        // Returns Basic Phone TS
+        private TemplateItem getPhoneBasic()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Basic Phone TS");
+            template.setTemplate("Cx hears: " + Environment.NewLine
+                     + "Caller hears: " + Environment.NewLine
+                     + "Number of phones: " + Environment.NewLine
+                     + "Basic TS done: Y/N" + Environment.NewLine
+                     + "Phone working: Y/N");
 
             return template;
         }
@@ -267,6 +275,20 @@ namespace Notes_Tool
                                  + "1= " + Environment.NewLine
                                  + "13= " + Environment.NewLine
                                  + "32= ");
+
+            return template;
+        }
+
+        // Returns Remote Control Programming template
+        private TemplateItem getRemoteProgramming()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Remote Control Programming");
+            template.setTemplate("Remote control model: " + Environment.NewLine
+                     + "TV Brand: " + Environment.NewLine
+                     + "Code used: " + Environment.NewLine
+                     + "Programming successful: Y/N");
 
             return template;
         }
@@ -360,6 +382,126 @@ namespace Notes_Tool
 
             return template;
         }
+
+        #endregion
+
+        #region -- Workflow --
+
+        // Returns Section title for workflow
+        private TemplateItem getTitleWorkflow()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("-- Workflow --");
+            template.setTemplate("");
+
+            return template;
+        }
+
+        #region Voice workflows
+
+        #endregion
+
+        #region IPTV workflows
+
+        // returns workflow STB no boot
+        private TemplateItem getWFSTBNoBoot()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("STB no boot");
+            template.setTemplate("On the screen, cx can see: " + Environment.NewLine
+                     + "Number of STB in home: " + Environment.NewLine
+                     + "Number of STB affected: " + Environment.NewLine
+                     + "Internet working: Y/N" + Environment.NewLine
+                     + "Phone working: Y/N" + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Device model: " + Environment.NewLine
+                     + "- Lights on: " + Environment.NewLine
+                     + "- Cables attached: " + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Sequential reboot: Y/N" + Environment.NewLine
+                     + "Reboots done: " + Environment.NewLine
+                     + "- Gateway: Y/N" + Environment.NewLine
+                     + "- AP: Y/N" + Environment.NewLine
+                     + "- PVR: Y/N" + Environment.NewLine
+                     + "- Affected STB: Y/N" + Environment.NewLine
+                     + "All TV working after sequential reboot: Y/N");
+
+            return template;
+        }
+
+        #endregion
+
+        #region Broadband workflows
+
+        // Returns workflow Slow Speeds
+        private TemplateItem getWFSlowSpeeds()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Slow Speeds");
+            template.setTemplate("Number of Devices used: " + Environment.NewLine
+                     + "Number of devices affected: " + Environment.NewLine
+                     + "Has wired device: Y/N" + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Outage: Y/N  Suspension: Y/N  Pending Orders: Y/N" + Environment.NewLine
+                     + "Insight shows" + Environment.NewLine
+                     + "- Current Train Rate: " + Environment.NewLine
+                     + "- Attainable rates: " + Environment.NewLine + Environment.NewLine
+                     + "- Line attenuation: " + Environment.NewLine
+                     + "- Theoretical dB loss: " + Environment.NewLine + Environment.NewLine
+                     + "- SNR margin: " + Environment.NewLine
+                     + "- QoS: " + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Device model: " + Environment.NewLine
+                     + "- Lights on: " + Environment.NewLine
+                     + "- Cables attached: " + Environment.NewLine
+                     + "- 3rd party device connected: Y/N" + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Speed Tests" + Environment.NewLine
+                     + "- Current speeds" + Environment.NewLine
+                     + "- Device: , Wired: Y/N, Ping: , DL: , UL: " + Environment.NewLine
+                     + "- after reboot" + Environment.NewLine
+                     + "- Device: , Wired: Y/N, Ping: , DL: , UL: " + Environment.NewLine
+                     + "- after factory reset" + Environment.NewLine
+                     + "- Device: , Wired: Y/N, Ping: , DL: , UL: ");
+
+            return template;
+        }
+
+        // Returns workflow Wireless cannot connect
+        private TemplateItem getWFWifiConn()
+        {
+            TemplateItem template = new TemplateItem();
+            template.init();
+            template.setTitle("Wireless Cannot Connect");
+            template.setTemplate("Number of Devices used: " + Environment.NewLine
+                     + "Number of Devices used: " + Environment.NewLine
+                     + "Number of devices affected: " + Environment.NewLine
+                     + "Wired device working: Y/N" + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Device model: " + Environment.NewLine
+                     + "- Lights on: " + Environment.NewLine
+                     + "- Cables attached: " + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "Wired device working: Y/N" + Environment.NewLine
+                     + "" + Environment.NewLine
+                     + "SSID: " + Environment.NewLine
+                     + "Modem reboot: Y/N" + Environment.NewLine
+                     + "Device reboot: Y/N" + Environment.NewLine
+                     + "Device forget network: Y/N" + Environment.NewLine
+                     + "Rebuild network: Y/N" + Environment.NewLine
+                     + "Factory Reset: Y/N");
+
+            return template;
+        }
+
+        #endregion
+
+        #region Satellite workflows
+
+        #endregion
 
         #endregion
 
